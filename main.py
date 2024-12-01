@@ -24,7 +24,7 @@ class WeatherScraper:
             return []
 
         weather_data = []
-        forecast = soup.find_all('div', class_='forecast-day')  
+        forecast = soup.find_all('div', class_='forecast-day')
         for day in forecast[:10]:
             date = day.find('span', class_='date-class').text.strip()
             temperature = day.find('span', class_='temp-class').text.strip()
@@ -122,4 +122,3 @@ if __name__ == "__main__":
 
     print("Найменша температура:", DateWeather(*min_temp[1:]))
     print("Найбільша температура:", DateWeather(*max_temp[1:]))
-
